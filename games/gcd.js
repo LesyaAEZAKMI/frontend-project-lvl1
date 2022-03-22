@@ -1,6 +1,7 @@
 import readlineSync from "readline-sync";
-import {userName} from './src/cli.js';
-const getRandomInt = (max) =>  Math.floor(Math.random() * max);
+import { userName } from '../src/cli.js';
+import { getRandomInt } from '../utile.js';
+
 const gcd = (a, b) => {
     if (a === 0 || b === 0) 
         return 0;
@@ -11,16 +12,18 @@ const gcd = (a, b) => {
             b = b - a;
     }
     return a;
-}
+};
+
+const roundCount = 3;
 export const brainGcd = () => {
     console.log('Find the greatest common divisor of given numbers.');
     let i = 1;
-    while(i <= 3) {
-        let a = getRandomInt(100);
-        let b = getRandomInt(100);
+    while(i <= roundCount) {
+        const a = getRandomInt(100);
+        const b = getRandomInt(100);
         console.log('Question:', a, b);
         const answer = readlineSync.question("Your answer: ");
-        let res = gcd(a, b);
+        const res = gcd(a, b);
         if (answer == res){
             console.log('Correct!');
         }
@@ -31,6 +34,5 @@ export const brainGcd = () => {
         }
         i++;
     }
-    if (i === 4) 
-        console.log('Congratulations, ' + userName + '!');
+    console.log('Congratulations, ' + userName + '!');
 }

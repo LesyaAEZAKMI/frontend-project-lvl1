@@ -1,6 +1,7 @@
 import readlineSync from "readline-sync";
-import {userName} from './src/cli.js';
-const getRandomInt = (min, max) =>  Math.floor(Math.random() * (max - min + 1) + min);
+import { userName } from './src/cli.js';
+import { getRandomInt } from '../utile.js';
+
 const createProgression = () => {
     let length = getRandomInt(5, 10);
     let step = getRandomInt(1, 20);
@@ -10,15 +11,17 @@ const createProgression = () => {
         arr[i] = arr[i - 1] + step;
     }
     return arr;
-}
+};
+
+const roundCount = 3;
 export const brainProgression = () => {
     console.log("What number is missing in the progression?");
     let i = 1;
-    while (i <= 3) {
+    while (i <= roundCount) {
         const arr = createProgression();
         const length = arr.length;
-        let index = Math.floor(Math.random() * length)
-        let res = arr[index];
+        const index = Math.floor(Math.random() * length)
+        const res = arr[index];
         arr[index] = '..';
         console.log('Question:', arr.join(' '));
         const answer = readlineSync.question("Your answer: ");
@@ -32,6 +35,5 @@ export const brainProgression = () => {
         }
         i++;
     }
-    if (i === 4) 
-        console.log('Congratulations, ' + userName + '!');
+    console.log('Congratulations, ' + userName + '!');
 }

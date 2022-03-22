@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-import {brainPrime} from '../prime.js';
+import { brainPrime } from '../prime.js';
 brainPrime();

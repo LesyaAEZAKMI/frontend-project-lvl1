@@ -1,6 +1,7 @@
 import readlineSync from "readline-sync";
-import {userName} from './src/cli.js';
-const getRandomInt = (min, max) =>  Math.floor(Math.random() * (max - min + 1) + min);
+import { userName } from './src/cli.js';
+import { getRandomInt } from '../utile.js';
+
 const prime = (count) => {
     if (count === 2) 
         return 'yes';
@@ -12,12 +13,14 @@ const prime = (count) => {
     }
     return 'yes';
 };
+
+const roundCount = 3;
 export const brainPrime = () => {
     console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
     let i = 1;
-    while (i <= 3) {
-        let count = getRandomInt(0, 1000);
-        let res = prime(count);
+    while (i <= roundCount) {
+        const count = getRandomInt(0, 1000);
+        const res = prime(count);
         console.log('Question:', count);
         const answer = readlineSync.question("Your answer: ");
         if (answer == res){
@@ -30,6 +33,5 @@ export const brainPrime = () => {
         }
         i++;
     }
-    if (i === 4) 
-        console.log('Congratulations, ' + userName + '!');
+    console.log('Congratulations, ' + userName + '!');
 }

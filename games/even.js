@@ -1,12 +1,14 @@
 import readlineSync from "readline-sync";
-import {userName} from './src/cli.js';
-const getRandomInt = (max) =>  Math.floor(Math.random() * max);
+import { userName } from '../src/cli.js';
+import { getRandomInt } from '../utile.js';
+
 let i = 1;
 let pruff;
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const roundCount = 3;
 export const brainEven = () => {
-    while (i <= 3){
-        let count = getRandomInt(1000);
+    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+    while (i <= roundCount){
+        const count = getRandomInt(1000);
         console.log('Question: ' + count);
         const answer = readlineSync.question("Your answer: ");
         if (count % 2 === 0)
@@ -23,6 +25,5 @@ export const brainEven = () => {
         }
         i++;
     }
-    if (i === 4) 
-        console.log('Congratulations, ' + userName + '!');
+    console.log('Congratulations, ' + userName + '!');
 };

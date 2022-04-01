@@ -1,4 +1,4 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 import { userName } from '../src/cli.js';
 function getRandomInt(min, max) {
     min = Math.ceil(min);

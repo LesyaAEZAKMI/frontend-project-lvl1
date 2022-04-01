@@ -1,8 +1,8 @@
-import readlineSync from "readline-sync";
+import readlineSync from 'readline-sync';
 import { userName } from '../src/cli.js';
 import { getRandomInt } from '../utile.js';
 
-const getOption = (operation, a, b) => {
+const getOption = (operation, a, b) => { 
     if (operation === '+')
         return a + b;
     if (operation === '-')

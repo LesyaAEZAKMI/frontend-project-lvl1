@@ -15,6 +15,8 @@ const gcd = (a, b) => {
         else
             b = b - a;
     }
+    if (a === 0 || b === 0)
+        return 0;
     return a;
 };
 

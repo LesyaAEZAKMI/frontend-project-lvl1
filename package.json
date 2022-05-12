@@ -1,9 +1,5 @@
 {
   "dependencies": {
-    "audit": "^0.0.6",
-    "false": "^0.0.4",
-    "form-data": "^4.0.0",
-    "npm": "^8.5.4",
     "readline-sync": "^1.4.10"
   },
   "name": "@hexlet/code",

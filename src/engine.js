@@ -18,7 +18,7 @@ const playGame = (description, getGameData) => {
     }
     console.log('Correct!');
   }
-  console.log(`Congratulations,  ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default playGame;

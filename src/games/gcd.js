@@ -2,22 +2,11 @@ import playGame from '../engine.js';
 
 import getRandomInt from '../utile.js';
 
-const gcd = (a, b) => {
-  if (a === 0 || b === 0) {
-    return 0;
+const gcd = (firstValue, secondValue) => {
+  if (secondValue > 0) {
+    return gcd(secondValue, firstValue % secondValue);
   }
-  while (a !== b) {
-    if (a > b) {
-      a -= b;
-    }
-    else {
-      b -= a;
-    }
-  }
-  if (a === 0 || b === 0) {
-    return 0;
-  }
-  return a;
+  return Math.abs(firstValue);
 };
 
 const description = 'Find the greatest common divisor of given numbers.';

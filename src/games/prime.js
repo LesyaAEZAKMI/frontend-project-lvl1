@@ -3,6 +3,9 @@ import getRandomInt from '../utile.js';
 import playGame from '../engine.js';
 
 const isPrime = (count) => {
+  if (count <= 1) {
+    return false;
+  }
   if (count === 2) {
     return true;
   }
@@ -20,7 +23,7 @@ const brainPrime = () => {
     const question = getRandomInt(2, 1000);
     const answer = isPrime(question) ? 'yes' : 'no';
     return [question, answer];
-  }
+  };
   playGame(description, getGameData);
-}
+};
 export default brainPrime;

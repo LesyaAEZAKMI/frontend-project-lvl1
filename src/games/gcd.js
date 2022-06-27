@@ -15,7 +15,7 @@ const brainGcd = () => {
     const firstOperand = getRandomInt(1, 1000);
     const secondOperand = getRandomInt(1, 1000);
     const question = `${firstOperand} ${secondOperand}`;
-    const answer = gcd(firstOperand, secondOperand);
+    const answer = String(gcd(firstOperand, secondOperand));
     return [question, answer];
   };
   playGame(description, getGameData);
